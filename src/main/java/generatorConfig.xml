@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+
+<generatorConfiguration>
+  <classPathEntry location="D:\development\jee\workspace\TestMybatisGenerator\lib\mysql-connector-java-5.1.20-bin.jar" />
+
+  <context id="mycontext" targetRuntime="MyBatis3">
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+        connectionURL="jdbc:mysql://localhost:3306/test_mybatis_spring"
+        userId="root"
+        password="shrh">
+    </jdbcConnection>
+
+    <javaTypeResolver >
+      <property name="forceBigDecimals" value="false" />
+    </javaTypeResolver>
+
+    <javaModelGenerator targetPackage="com.ipensee.core" targetProject="TestMavenSpring/src/main/java">
+      <property name="enableSubPackages" value="true" />
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+
+    <sqlMapGenerator targetPackage="xml.mapper"  targetProject="TestMavenSpring/src/main/java">
+      <property name="enableSubPackages" value="true" />
+    </sqlMapGenerator>
+
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.ipensee.core"  targetProject="TestMavenSpring/src/main/java">
+      <property name="enableSubPackages" value="true" />
+    </javaClientGenerator>
+	<!--
+    <table tableName="user" domainObjectName="User"
+    	enableCountByExample="false" enableUpdateByExample="false"
+		enableDeleteByExample="false" enableSelectByExample="false"
+		selectByExampleQueryId="false">
+
+      <property name="useActualColumnNames" value="true"/>
+      <generatedKey column="ID" sqlStatement="DB2" identity="true" />
+      <columnOverride column="DATE_FIELD" property="startDate" />
+      <ignoreColumn column="FRED" />
+      <columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" />
+    </table>
+    -->
+    <table tableName="user" domainObjectName="User" />
+  </context>
+</generatorConfiguration>
